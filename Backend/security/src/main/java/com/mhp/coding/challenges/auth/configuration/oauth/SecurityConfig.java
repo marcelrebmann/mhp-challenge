@@ -1,6 +1,5 @@
 package com.mhp.coding.challenges.auth.configuration.oauth;
 
-import com.mhp.coding.challenges.auth.UserRoles;
 import net.minidev.json.JSONObject;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDateTime;
 
 @EnableWebSecurity
 //@EnableGlobalMethodSecurity(prePostEnabled = true)

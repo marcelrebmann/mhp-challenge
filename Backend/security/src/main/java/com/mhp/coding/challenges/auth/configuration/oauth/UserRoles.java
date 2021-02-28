@@ -1,4 +1,4 @@
-package com.mhp.coding.challenges.auth;
+package com.mhp.coding.challenges.auth.configuration.oauth;
 
 /**
  * OAuth2 user roles for the door service.
