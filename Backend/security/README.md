@@ -1,5 +1,55 @@
 # Backend Coding Challenge: Authentication
 
+
+## Cloud Scenario Components
+This repository contains the following components to realize the authentication cloud scenario:
+
+|Component| Location | Description|
+| --- | --- | --- |
+|Authentication Server | /authserver | Keycloak server via Docker |
+| Resource Server | /src | Java Spring Application |
+| Client | /frontend | Angular Application
+
+
+## MHP realm
+This is the pre-configured realm for this scenario.
+It contains user roles, groups and service configs for the authentication server.
+
+#### User roles:
+* `DOOR_VIEWER`: Permits to request the list of doors.
+* `DOOR_USER`: Permits to update/modify (e.g. open/close) a door.
+
+#### User groups
+* `MHP_Internship`: Has role `DOOR_VIEWER` assigned.  
+  Those users can see the list of doors in the client app.
+* `MHP_Member`: Has role `DOOR_USER` assigned.  
+Those users can open/close doors in the client app.
+  
+#### Services
+`mhp-door-service`: The registered service that the Angular client uses for communication.
+
+
+## How to get started
+
+1. Make sure you have `Java, Docker, Node and npm` installed.
+2. Start the Keycloak authentication server via `docker-compose up`
+3. Open `localhost:8081` and login to the admin console.  
+Use the initial admin account credentials:  
+   Username: `admin`  
+   Password: `demo123`
+
+4. Import the MHP realm to configure the Authentication Server.  
+Navigate to `Add realm -> Import`, then choose the realm file (`/authserver/mhp-realm.json`) and let Keycloak import it.
+   
+5. Create Users in the MHP realm  
+On first startup, you need to create at least a single user.
+   Make sure to add the user to one of the user groups `MHP_*`.
+   
+6. Start/Serve the resource server (Java, Spring backend)
+7. Start the client via `npm start` within the `frontend` directory.
+8. Navigate to `http://localhost:4200/` to interact.
+
+
 ## Description:
 
 Within the framework of an agile project, new security mechanisms for an access system of doors are to be implemented. Until now, access to the system via network zones and VPN has been secured on an on-premises hosted system, thus, a security implementation was not mandatory until now. However, in the course of a planned migration to the cloud, this requirement has changed.
