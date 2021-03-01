@@ -19,7 +19,7 @@ public class DoorDatabaseService implements DoorDatabaseProvider {
             {
                 add(new Door(1, "fireproof", "Basement 5.3", State.LOCKED));
                 add(new Door(2, "normal", "Office 3.1.2", State.UNLOCKED));
-                add(new Door(2, "normal", "Office 3.1.3", State.LOCKED));
+                add(new Door(3, "normal", "Office 3.1.3", State.LOCKED));
             }
         };
     }

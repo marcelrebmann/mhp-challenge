@@ -15,6 +15,10 @@ public class GlobalBeanConfiguration {
         return new DoorService(doorDatabaseProvider);
     }
 
+    /**
+     * Sets the custom keycloak JWT converter as default for dependency injection.
+     * @return The jwt converter to be used.
+     */
     @Bean(name = "jwtAuthenticationConverter")
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtAuthenticationConverter jwtConverter = new JwtAuthenticationConverter();
