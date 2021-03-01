@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Base Colors
+$color-green: #00560d;
+$color-light-green: #94f6a4;
+$color-red: #670000;
+$color-light-red: #f69494;
+
+
+// Background colors
+$main-bg: #fafafa;
+$bg-blue: #004085;
+$bg-light-grey: #dedede;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "sans-serif";
+}
+
+body {
+  background-color: $main-bg;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+// Font colors
+$font-white: #f6f6f6;
+
+// Font Sizes
+$font-size-small: 12px;
+$font-size-regular: 16px;
+$font-size-big: 20px;
+$font-size-huge: 24px;
+
+
+.font-white {
+  color: $font-white;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-sm {
+  font-size: $font-size-small;
+}
+.font-regular {
+  font-size: $font-size-regular;
+}
+.font-big {
+  font-size: $font-size-big;
+}
+.font-huge {
+  font-size: $font-size-huge;
+}
+
+
+// Button styles
+$button-bg-primary: #008575;
+$button-bg-primary--hover: #019987;
+$button-bg-secondary: white;
+$button-bg-secondary--hover: #efefef;
+
+$button-font-primary: $font-white;
+$button-font-secondary: $button-bg-primary;
+
+
+button {
+  outline: none;
+  padding: 12px;
+  transition: background-color 0.2s;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &.primary {
+    background-color: $button-bg-primary;
+    color: $button-font-primary;
+
+    &:hover {
+      background-color: $button-bg-primary--hover;
+    }
+  }
+
+  &.secondary {
+    //background-color: $button-bg-secondary;
+    background-color: transparent;
+    border-color: $button-bg-secondary;
+    color: $button-font-secondary;
+
+    &:hover {
+      background-color: $button-bg-secondary--hover;
+    }
+  }
+
+  &.small {
+    height: 24px;
+  }
+}

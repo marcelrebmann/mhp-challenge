@@ -1,0 +1,10 @@
+div.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+app-door-list {
+  display: block;
+  width: 100%;
+}

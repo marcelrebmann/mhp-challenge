@@ -1,0 +1,14 @@
+<div *ngIf="!!userInfo && !!userInfo.name" class="user-info-container">
+  <div class="flex-row">
+    <i class="mdi mdi-account-circle mdi-36px"></i>
+    <h4 class="user-name">{{userInfo?.name}}</h4>
+  </div>
+  <div class="flex-row access-rights">
+    <i class="mdi mdi-eye-check-outline mdi-24px user-role"
+       [class.granted]="isReadAccessGranted$ | async"
+       title="Read doors"></i>
+    <i class="mdi mdi-lock-open-check mdi-24px user-role"
+       [class.granted]="isWriteAccessGranted$ | async"
+       title="Modify doors"></i>
+  </div>
+</div>

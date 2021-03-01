@@ -1,0 +1,28 @@
+@import "src/styles";
+
+div.user-info-container {
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px 0 $bg-light-grey;
+  background-color: white;
+
+  .user-name {
+    margin-left: 6px;
+  }
+
+  .access-rights {
+    padding-left: 42px;
+
+    i:not(:last-of-type) {
+      margin-right: 6px;
+    }
+  }
+
+  i.user-role {
+    color: $color-red;
+
+    &.granted {
+      color: $color-green;
+    }
+  }
+}

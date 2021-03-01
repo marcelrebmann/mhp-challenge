@@ -1,0 +1,16 @@
+<div>
+  <br/>
+  <div class="list-header">
+    <h2>Doors</h2>
+    <button class="secondary" (click)="requestRefresh()">
+      <i class="mdi mdi-refresh"></i>
+    </button>
+  </div>
+  <br/>
+  <ng-container *ngFor="let door of doors">
+    <app-door-tile [door]="door"
+                   [isOpenClosePermitted]="areChangesEnabled"
+                   (openDoor)="openDoor($event)"
+                   (closeDoor)="closeDoor($event)"></app-door-tile>
+  </ng-container>
+</div>

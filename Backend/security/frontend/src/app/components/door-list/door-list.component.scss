@@ -1,0 +1,21 @@
+@import "src/styles";
+
+app-door-tile {
+  display: block;
+}
+
+app-door-tile:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid $bg-light-grey;
+}
+
+button > i {
+  font-size: 20px;
+}

@@ -1,0 +1,10 @@
+@import "src/styles";
+
+nav {
+  height: 80px;
+  padding: 20px;
+  background-color: $bg-blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,10 @@
+<app-header [isLoggedIn]="isLoggedIn$ | async"
+            [userInfo]="userInfo$ | async"
+            (loginRequested)="onLogin()"
+            (logoutRequested)="onLogout()"></app-header>
+<main>
+  <div class="content">
+    <app-user-info [userInfo]="userInfo$ | async"></app-user-info>
+    <router-outlet></router-outlet>
+  </div>
+</main>

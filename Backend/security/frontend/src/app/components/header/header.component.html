@@ -1,0 +1,12 @@
+<nav class="font-white font-huge">
+  <h2>Doors App</h2>
+  <div>
+    <button *ngIf="isLoggedIn else loginButton"
+            class="primary"
+            (click)="requestLogout()">Logout</button>
+    <ng-template #loginButton>
+      <button class="primary"
+              (click)="requestLogin()">Login</button>
+    </ng-template>
+  </div>
+</nav>

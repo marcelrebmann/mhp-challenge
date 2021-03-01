@@ -1,0 +1,60 @@
+@import "src/styles";
+
+div.tile {
+  box-shadow: 0 0 6px 2px $bg-light-grey;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  background-color: white;
+}
+
+div.title-row {
+  padding: 20px;
+
+  > div {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  > p {
+    padding-left: 24px;
+  }
+}
+
+button.door-button {
+  height: 100%;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+
+  i {
+    font-size: 24px;
+    transition: font-size 0.15s ease-in-out;
+  }
+
+  &:hover {
+    i {
+      font-size: 28px;
+    }
+  }
+
+  &.is-open {
+    background-color: $color-light-green;
+
+    i, p {
+      color: $color-green;
+    }
+  }
+
+  &.is-closed {
+    background-color: $color-light-red;
+
+    i, p {
+      color: $color-red;
+    }
+  }
+}

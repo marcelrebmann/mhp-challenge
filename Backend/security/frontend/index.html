@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MHP Doors</title>
+</head>
+<body>
+<div class="login-container">
+    <p>Login with your company account to see more...</p>
+    <form action="" method="post" onsubmit="login(username.value, password.value)">
+        <label for="username">Benutzername</label>
+        <input id="username" name="username" type="text">
+        <label for="username">Passwort</label>
+        <input id="password" name="password" type="password">
+        <button class="login-button" type="submit">Login</button>
+    </form>
+</div>
+
+<div class="main-content">
+    <p>Tür-Management</p>
+    <a onclick="getDoors()">List doors</a>
+</div>
+</body>
+<script type="text/javascript">
+    const AUTH_API = "http://localhost:3000";
+    const DOORS_API = "http://localhost:8081/v1/door";
+    let authToken;
+
+    function login(username, password) {
+        fetch(AUTH_API, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({username, password})
+        })
+            .then(res => res.json())
+            .then(body => {
+                console.log(body);
+            })
+            .catch(() => console.error("Auth request failed"));
+    }
+
+    function getDoors() {
+        fetch(DOORS_API)
+            .then(res => res.json())
+            .then(body => {
+                console.log(body);
+            })
+    }
+
+    function listDoors(doors) {
+        for (const door of doors) {
+        }
+    }
+</script>
+</html>

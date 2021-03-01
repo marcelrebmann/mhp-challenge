@@ -1,0 +1,19 @@
+<div class="home-container">
+  <ng-container *ngIf="(authService.isAuthenticated$ | async) else loginHint">
+    <app-door-list [doors]="doors$ | async"
+                   [areChangesEnabled]="isUserPermittedForDoorChanges$ | async"
+                   (doorStateChanged)="publishDoorStateChange($event)"
+                   (refreshRequested)="refreshDoorList()"></app-door-list>
+    <div *ngIf="!(doors$ | async)?.length">
+      <p>No doors available.</p>
+    </div>
+  </ng-container>
+
+  <ng-template #loginHint>
+    <br/>
+    <h3>Login to control the doors.</h3>
+    <br/>
+    <button class="primary"
+            (click)="login()">Login</button>
+  </ng-template>
+</div>

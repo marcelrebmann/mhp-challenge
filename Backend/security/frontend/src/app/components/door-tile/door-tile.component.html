@@ -1,0 +1,26 @@
+<div class="tile">
+  <div class="title-row">
+    <div>
+      <i class="mdi mdi-door mdi-24px"></i>
+      <h3>{{door.location}}</h3>
+    </div>
+    <p>ID: {{door.id}}</p>
+    <p>Status: {{door.state}}</p>
+    <p>Typ: {{door.type}}</p>
+  </div>
+  <ng-container *ngIf="isOpenClosePermitted">
+    <button *ngIf="door.state === doorStates.UNLOCKED else openButton"
+            class="door-button is-open"
+            (click)="closeDoor.emit(door)">
+      <i class="mdi mdi-lock-open"></i>
+      <p>Open</p>
+    </button>
+    <ng-template #openButton>
+      <button class="door-button is-closed"
+              (click)="openDoor.emit(door)">
+        <i class="mdi mdi-lock"></i>
+        <p>Closed</p>
+      </button>
+    </ng-template>
+  </ng-container>
+</div>
